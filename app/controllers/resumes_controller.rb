@@ -1,6 +1,7 @@
 class ResumesController < ApplicationController
 before_action :set_resume, only: [:show]
 
+
   def index
   	@resumes = Resume.all
   end
@@ -11,7 +12,6 @@ before_action :set_resume, only: [:show]
 
   def create
   	@resume = Resume.new(resume_params)
-
     if @resume.save
       redirect_to resumes_path, notice: "The resume #{@resume.name} has been uploaded."
       pdf   = Grim.reap( "#{Rails.root}/public" + "#{@resume.attachment}")
@@ -26,8 +26,7 @@ before_action :set_resume, only: [:show]
       i=i+1
 
       end
-
-
+      
     else
       render "new"
     end
@@ -49,7 +48,7 @@ before_action :set_resume, only: [:show]
     #-------------------
   end
 def show
-      
+
 end
   
 
@@ -67,6 +66,6 @@ end
     end
 
   def resume_params
-    params.require(:resume).permit(:name, :attachment)
+    params.require(:resume).permit(:name, :attachment, :file)
   end
 end
