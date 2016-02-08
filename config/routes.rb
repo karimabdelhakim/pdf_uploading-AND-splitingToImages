@@ -1,4 +1,8 @@
 MyUploader::Application.routes.draw do
+
+
+ 
+
  resources :resumes, only: [:index, :new, :create, :show, :destroy]
   root "resumes#index"
  # get 'resumes/index'

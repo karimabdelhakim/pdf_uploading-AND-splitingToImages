@@ -26,7 +26,9 @@ gem 'carrierwave', '~> 0.9'
 gem 'bootstrap-sass', '~> 2.3.2'
 gem 'grim'
 gem 'poppler', '~> 3.0', '>= 3.0.7'
-gem 'hermitage'
+gem "paperclip", "~> 4.3"
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

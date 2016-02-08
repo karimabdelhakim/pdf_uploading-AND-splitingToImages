@@ -16,12 +16,12 @@ before_action :set_resume, only: [:show]
       redirect_to resumes_path, notice: "The resume #{@resume.name} has been uploaded."
       pdf   = Grim.reap( "#{Rails.root}/public" + "#{@resume.attachment}")
       i=0;
-      images = Array.new
+      
       pdf.each do |page|
         
            png   = page.save("#{Rails.root}/public" + "#{@resume.attachment}"  + "#{i}.png")
 
-           images.push("/uploads/resume/attachment/#{@resume.id}") 
+           
 
       i=i+1
 
