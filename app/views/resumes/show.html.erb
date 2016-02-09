@@ -14,11 +14,12 @@
 <p>
   <strong>Slides:</strong>
 </p>
-
+<p>
 <%= link_to 'image link' ,  "/uploads/resume/attachment/#{@resume.id}/#{@resume.attachment_identifier}1.png" %>
 <%= "..... "%>
 
 <%= link_to 'Back', resumes_path %>
+</p>
 <% images_path = Array.new  %>
 
 
@@ -32,6 +33,16 @@
 <% images_path.push("/uploads/resume/attachment/#{@resume.id}/#{imageName}" ) %>
 <% end %>
 
+
+<% images_path.each do |thumbnail| %>
+<div class="size">
+<a href= " link to somewhere "><img src = " <%= thumbnail %>  "  ></a> 
+</div>
+<% end %>   
+
+
+
+
 <script type="text/javascript" charset="utf-8">
   $(function(){
     $("#slides").electricSlide();
@@ -44,3 +55,7 @@
   </div>
 <% end %>
 </div>
+
+
+
+
